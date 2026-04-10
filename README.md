@@ -3,6 +3,8 @@
 
 This is a complete and robust terminal-based and very accurate scrambles generator and timer for your Rubik's Cube practicing. Scrambles and timers are shown in very big letters. It also shows your times and the averages according to the WCA rules.
 
+This is NOT the official scramble program, but it is very good for practicing. 
+
 It is the only application which gives you the 15 seconds regressive timer after the scramble, so you can analyze your cube the same way it happens in the competitions! After this, the game really begins. You will see the changes in the screen and will hear the sound indication.
 
 Written in C, this application is extremely fast, small and does the task. It runs everything the way a Speedcuber needs, with very big letters and without complication. Of course we put some colors, animations and sound effects to make the things more pleasant and enjoyable.
