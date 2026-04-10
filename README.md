@@ -2,7 +2,9 @@
 
 This is a complete and robust terminal-based and very accurate scrambles generator and timer for your Rubik's Cube practicing. Scrambles and timers are shown in very big letters. It also shows your times and the averages according to the WCA rules.
 
-This is NOT the official scramble program. We are just playing with the C language, but the program is very good for practicing. Here we just do a 25 randomic move scramble, but the randomizer takes account every block of 3 consecutive moves to make sure that every move is distinct and does not invalidate a previous one.
+This is NOT the official scramble program. We are just playing with the C language here, but the program is very good for practicing.
+
+The program does a 25 randomic move scramble, but the randomizer takes account every block of 3 consecutive moves to make sure that every move is distinct and does not invalidate a previous one.
 
 It is the only application which gives you the 15 seconds regressive timer after the scramble, so you can analyze your cube the same way it happens in the competitions! After this, the game really begins. You will see the changes in the screen and will hear the sound indications.
 
