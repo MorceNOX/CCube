@@ -1,4 +1,3 @@
-# CCube
 <img width="1035" height="962" alt="logo" src="https://github.com/user-attachments/assets/8928eaf8-4664-4b71-8546-b81200c473d9" />
 
 This is a complete and robust terminal-based and very accurate scrambles generator and timer for your Rubik's Cube practicing. Scrambles and timers are shown in very big letters. It also shows your times and the averages according to the WCA rules.
@@ -41,7 +40,7 @@ make install
 Here are a few screenshots showing the features and the simplicity.
 
 ### The generated scramble:
-<img width="2560" height="1539" alt="001-generated-scramble" src="https://github.com/user-attachments/assets/b1744d60-6ed6-4368-977a-d0fd928c3b6b" />
+<img width="2560" height="1539" alt="001-generated-scramble" src="https://github.com/user-attachments/assets/7e2f9741-5a8b-4692-9e9f-7710949bdb6f" />
 
 ### The 15 seconds pre-timer:
 <img width="2560" height="1539" alt="002-15secs-counter" src="https://github.com/user-attachments/assets/061a92ee-dc4f-42ff-ba30-5becb3b5c9bd" />
