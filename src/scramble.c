@@ -4,6 +4,8 @@
 #include <string.h>
 #include <time.h>
 
+
+
 // Direction arrays
 char DIRECTIONS[] = {'B', 'D', 'F', 'L', 'R', 'U'};
 char OPPOSITE_DIR[] = {'F', 'U', 'B', 'R', 'L', 'D'};
@@ -18,9 +20,9 @@ void generate_scramble(char *scramble) {
     scramble[0] = '\0';
     char prev_prev_dir = '\0';
     char prev_dir = '\0';
-    char movements[20][4]; // 20 movements, max 4 chars each
+    char movements[N_SCRAMBLES][4]; // 20 movements, max 4 chars each
 
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < N_SCRAMBLES; i++) {
         // Select random direction
         int n = random_int(6);
         char direction = DIRECTIONS[n];
@@ -66,11 +68,11 @@ void split_scramble(const char *full_scramble, char *scrambleA, char *scrambleB,
     char *token = strtok((char*)full_scramble, " ");
     int i = 0;
     
-    while (token != NULL && i < 20) {
-        if (i < 7) {
+    while (token != NULL && i < N_SCRAMBLES) {
+        if (i < 9) {
             if (strlen(scrambleA) >= 0) strcat(scrambleA, " ");
             strcat(scrambleA, token);
-        } else if (i < 14) {
+        } else if (i < 17) {
             if (strlen(scrambleB) >= 0) strcat(scrambleB, " ");
             strcat(scrambleB, token);
         } else {
@@ -88,7 +90,7 @@ void get_scramble(const char *full_scramble, char *scramble) {
     char *token = strtok((char*)full_scramble, " ");
     int i = 0;
     
-    while (token != NULL && i < 20) {
+    while (token != NULL && i < N_SCRAMBLES) {
         if (strlen(scramble) > 0) strcat(scramble, " ");
         strcat(scramble, token);
         

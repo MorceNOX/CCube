@@ -21,7 +21,6 @@
 #include <ao/ao.h>
 #endif
 
-#define N_SCRAMBLES 20
 #define N_TIMES 100
 #define MAX_SCRAMBLE_LENGTH 1024
 #define MAX_AO_SIZE 1000

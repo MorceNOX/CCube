@@ -5,6 +5,21 @@
 #include "quicksort.h"
 
 
+
+unsigned short get_terminal_width(void) {
+    struct winsize ws;
+    // Try STDIN_FILENO, STDOUT_FILENO, and STDERR_FILENO in case one is redirected
+    if (ioctl(STDIN_FILENO, TIOCGWINSZ, &ws) == 0) {
+        return ws.ws_col;
+    } else if (ioctl(STDOUT_FILENO, TIOCGWINSZ, &ws) == 0) {
+        return ws.ws_col;
+    } else if (ioctl(STDERR_FILENO, TIOCGWINSZ, &ws) == 0) {
+        return ws.ws_col;
+    }
+
+    return 80;
+}
+
 void replace_char(char *str, char find, char replace) {
     // Iterate through the string until the null-terminating character ('\0') is reached
     for (int i = 0; str[i] != '\0'; i++) {

@@ -7,6 +7,8 @@
 #include <unistd.h>
 #include "utils.h"
 #include "timer.h"
+#include "scramble.h"
+
 
 #define MAX_LINE_LENGTH 2048
 
@@ -326,7 +328,9 @@ char *space_12lines[] = {
 char print_scramble( const char *text ) {
     char c=' ';
     
-    for (int i = 0; i < 59; i++ ) {
+    int nSize = (N_SCRAMBLES * 2) + (N_SCRAMBLES - 1);
+
+    for (int i = 0; i < nSize; i++ ) {
         
         if ( text[i] != '\0' )
             c = text[i]; 
@@ -380,7 +384,8 @@ void create_box(const char *text) {
 void create_box_scramble(const char *text) {
     setlocale(LC_ALL, "");
 
-    int width = 63;
+    int nSize = (N_SCRAMBLES * 2) + (N_SCRAMBLES - 1);
+    int width = nSize + 4;
 
     // Top border
     printf("\033[32m");
@@ -500,16 +505,16 @@ void print_average_times(int ao_count, double ao5, double ao12, double ao50, dou
 
     printf("\033[1m");
     printf("\rAverage times for this session:\n");
-    printf("───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\n");
+    printf("───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\n");
 
     printf("\033[0m");
     printf("\033[40m");
 
-    char strao5[20];
-    char strao12[20];
-    char strao50[20];
-    char strmo3[20];
-    char strbest[20];
+    char strao5[N_SCRAMBLES];
+    char strao12[N_SCRAMBLES];
+    char strao50[N_SCRAMBLES];
+    char strmo3[N_SCRAMBLES];
+    char strbest[N_SCRAMBLES];
 
     strcpy(strao5, get_strtime((long long)ao5));
     strcpy(strao12, get_strtime((long long)ao12));
@@ -577,7 +582,7 @@ void print_letter(const char *letter) {
                 for (int j = 0; j < 7; j++) current_char_array[j] = TWO_7lines[j];
                 break;
             case '\'': 
-            case '´':
+            case L'´':
                 for (int j = 0; j < 7; j++) current_char_array[j] = prime_7lines[j];
                 break;
             case ' ': 

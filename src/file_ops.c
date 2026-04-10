@@ -9,6 +9,7 @@
 #include <dirent.h>
 #include <ctype.h>
 #include "utils_data.h"
+#include "scramble.h"
 
 
 void close_session() {
@@ -193,7 +194,10 @@ long long* read_numbers_from_file(const char* filename, int* count) {
 
 void f_print_scramble( int fd, const char *text ) {
     char c=' ';
-    for (int i = 0; i < 67; i++ ) {
+
+    int nSize = (N_SCRAMBLES * 2) + (N_SCRAMBLES - 1);
+
+    for (int i = 0; i < nSize; i++ ) {
 
         if ( text[i] != '\0' )     
             dprintf(fd, "%c", text[i]);
@@ -311,7 +315,7 @@ void print_last_scrambles() {
     
     printf("\033[35m");
     printf("\nLast 12 scrambles:\n");
-    printf("───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\n");
+    printf("───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\n");
     
     // Read all lines into array
     char lines[12][512];
@@ -334,6 +338,6 @@ void print_last_scrambles() {
     }
     
     fclose(file);
-    printf("───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\n");
+    printf("───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────\n");
     printf("\033[0m");
 }
